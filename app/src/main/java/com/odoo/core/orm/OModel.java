@@ -345,33 +345,36 @@ public class OModel implements ISyncServiceListener {
                 for (Annotation annotation : annotations) {
                     // Check for odoo api annotation
                     Class<? extends Annotation> type = annotation.annotationType();
-                    if (type.getDeclaringClass().isAssignableFrom(Odoo.api.class)) {
-                        switch (mOdooVersion.getVersionNumber()) {
-                            case 11:
-                                if (type.isAssignableFrom(Odoo.api.v11alpha.class)) {
-                                    version++;
-                                }
-                                break;
-                            case 10:
-                                if (type.isAssignableFrom(Odoo.api.v10.class)) {
-                                    version++;
-                                }
-                                break;
-                            case 9:
-                                if (type.isAssignableFrom(Odoo.api.v9.class)) {
-                                    version++;
-                                }
-                                break;
-                            case 8:
-                                if (type.isAssignableFrom(Odoo.api.v8.class)) {
-                                    version++;
-                                }
-                                break;
-                            case 7:
-                                if (type.isAssignableFrom(Odoo.api.v7.class)) {
-                                    version++;
-                                }
-                                break;
+                    if (type.getDeclaringClass()!= null) {
+                        boolean retval = (type.getDeclaringClass().isAssignableFrom(Odoo.api.class));
+                        if (retval) {
+                            switch (mOdooVersion.getVersionNumber()) {
+                                case 11:
+                                    if (type.isAssignableFrom(Odoo.api.v11alpha.class)) {
+                                        version++;
+                                    }
+                                    break;
+                                case 10:
+                                    if (type.isAssignableFrom(Odoo.api.v10.class)) {
+                                        version++;
+                                    }
+                                    break;
+                                case 9:
+                                    if (type.isAssignableFrom(Odoo.api.v9.class)) {
+                                        version++;
+                                    }
+                                    break;
+                                case 8:
+                                    if (type.isAssignableFrom(Odoo.api.v8.class)) {
+                                        version++;
+                                    }
+                                    break;
+                                case 7:
+                                    if (type.isAssignableFrom(Odoo.api.v7.class)) {
+                                        version++;
+                                    }
+                                    break;
+                            }
                         }
                     }
                     // Check for functional annotation
