@@ -37,8 +37,8 @@ public class Addons extends AddonsHelper {
      * for maintain sequence call withSequence(int sequence)
      * OAddon partners = new OAddon(Partners.class).withSequence(2);
      */
-    OAddon a_agenda = new OAddon(CalendarDashboard.class).setDefault();
-    OAddon b_partners = new OAddon(Customers.class);
+    OAddon a_agenda = new OAddon(CalendarDashboard.class);
+    OAddon b_partners = new OAddon(Customers.class).setDefault();
     OAddon c_crm_leads = new OAddon(CRMLeads.class);
     OAddon e_sale = new OAddon(Sales.class);
     OAddon f_phone_calls = new OAddon(PhoneCalls.class);

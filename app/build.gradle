@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25'
     defaultConfig {
         useLibrary 'org.apache.http.legacy'
         manifestPlaceholders = [applicationName: "CRM"]
@@ -27,13 +26,13 @@ android {
     }
 }
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:cardview-v7:25.1.0'
-    compile 'com.google.android.gms:play-services-gcm:10.0.1'
-    compile 'com.android.support:design:25.1.0'
-    compile 'com.android.volley:volley:1.0.0'
-    compile project(':intro-slider-lib')
-    compile project(':intro-slider-lib')
-    compile project(':calendar-lib')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:25.1.0'
+    implementation 'com.android.support:cardview-v7:25.1.0'
+    implementation 'com.google.android.gms:play-services-gcm:10.0.1'
+    implementation 'com.android.support:design:25.1.0'
+    implementation 'com.android.volley:volley:1.0.0'
+    implementation project(':intro-slider-lib')
+    implementation project(':intro-slider-lib')
+    implementation project(':calendar-lib')
 }
